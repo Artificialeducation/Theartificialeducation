@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="index.html" class="logo">
+            <!-- Yaha apni logo image daal dena -->
+            <img src="image/logo.png" alt="The Artificial Education Logo" class="logoimage">
+            <h1 class="logo-text">The Artificial Education</h1>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="about.html">About</a>
+            <a href="note.html">Notes</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Get In Touch</h1>
+            <p>Have questions? Want to give feedback? We're happy to hear from you!</p>
+        </div>
+    </section>
+
+    <!-- Contact & Review Section -->
+    <section class="section contact-section">
+        <div class="contact-container">
+
+            <!-- Left Side: Contact Form + Review -->
+            <div class="contact-form-box">
+                <h2>Send Message or Review</h2>
+                <form action="#" method="POST" id="contactForm">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Full Name</label>
+                            <input type="text" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="course-query">Course Related Query</option>
+                            <option value="feedback">Feedback / Review</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Rating for Review -->
+                    <div class="form-group" id="rating-group" style="display: none;">
+                        <label>How would you rate our courses?</label>
+                        <div class="star-rating">
+                            <span data-value="1">★</span>
+                            <span data-value="2">★</span>
+                            <span data-value="3">★</span>
+                            <span data-value="4">★</span>
+                            <span data-value="5">★</span>
+                        </div>
+                        <input type="hidden" name="rating" id="rating-input" value="5">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message / Review</label>
+                        <textarea name="message" rows="7"
+                            placeholder="Write your message or review here... (e.g. I really liked your Tally Prime course...)"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Right Side: Social Links & Info -->
+            <div class="contact-info-box">
+                <h2>Connect With Us</h2>
+
+                <div class="info-item">
+                    <h3>📍 Location</h3>
+                    <p>Rewari, Haryana, India</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>📧 Email</h3>
+                    <p>theartificialeducation@gmail.com</p>
+                </div>
+
+                <div class="social-section">
+                    <h3>Follow Us On</h3>
+                    <div class="social-icons">
+                        <a href="https://www.youtube.com/@yourchannel" target="_blank" class="social-btn youtube">
+                            ▶ YouTube
+                        </a>
+                        <a href="https://www.instagram.com/yourinstagram" target="_blank" class="social-btn instagram">
+                            📷 Instagram
+                        </a>
+                        <a href="https://twitter.com/yourtwitter" target="_blank" class="social-btn twitter">
+                            𝕏 Twitter
+                        </a>
+                        <a href="https://www.facebook.com/yourfacebook" target="_blank" class="social-btn facebook">
+                            ⓕ Facebook
+                        </a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <h3>⏰ Support Hours</h3>
+                    <p>Monday to Saturday: 9 AM - 6 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p><strong>The Artificial Education</strong> © 2026 | Rewari, Haryana, India</p>
+        <div class="social" style="margin: 25px 0;">
+            <a href="https://www.youtube.com/@yourchannel" target="_blank">▶ YouTube</a>
+            <a href="#">📷 Instagram</a>
+            <a href="#">𝕏 Twitter</a>
+        </div>
+        <p style="opacity: 0.7; font-size: 0.95rem;">Made for students who want to learn computers the easy way</p>
+    </footer>
+
+</body>
+
+</html>
