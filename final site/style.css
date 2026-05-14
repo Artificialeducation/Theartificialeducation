@@ -1,0 +1,885 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+:root {
+    --main-color: #00ffcc;
+    --hero-gradient: linear-gradient(rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.8));
+    --hero-img: url('image/AI_blog.png');
+    --shadow-color: rgba(0, 255, 204, 0.7);
+    --nav-bg: rgba(0, 0, 0, 0.925);
+
+    --bg-color: #000000ec;
+    --bg-color2: #bbb5b5c7;
+    --box-bg-color: #2c2c2c;
+    --why-card-bg: #252525;
+
+    --h1font: 3.5rem;
+    --itemfsize: 2rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flexContainer {
+    display: flex;
+    padding: 1rem 5rem;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+html {
+    font-size: 10px;
+}
+
+/* Body Text */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+}
+
+a,
+li {
+    text-decoration: none;
+}
+
+.infoText {
+    font-size: 3.5rem;
+    color: var(--main-color);
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p,
+.button {
+    font-size: 18px;
+    line-height: 1.7;
+    color: white;
+}
+
+/* ========================= CARD SECTION ========================= */
+.card-box {
+    background-color: var(--box-bg-color);
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    flex: 1 1 40rem;
+    max-width: 50rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    gap: 1.6rem;
+    box-shadow: 0 0 0.5rem var(--shadow-color);
+
+    display: flex;
+    flex-direction: column;
+
+    transition: all .3s ease;
+}
+
+.card-box img {
+    width: 100%;
+    height: 22rem;
+    object-fit: cover;
+}
+
+.card-box .about-card {
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+
+    text-align: left;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+}
+
+.about-card .button {
+    margin-top: auto;
+}
+
+.card-box:hover {
+    box-shadow: 0 5px 10px 3px var(--main-color);
+    transform: translateY(-5px);
+}
+
+/* ==============================================button styles======================================== */
+.button {
+    text-align: center;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    background-color: var(--main-color);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    color: black;
+    font-weight: bolder;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+    background-color: var(--bg-color2);
+    transform: translatey(-0.5rem);
+    -webkit-transform: translatey(-0.5rem);
+    -moz-transform: translatey(-0.5rem);
+    -ms-transform: translatey(-0.5rem);
+    -o-transform: translatey(-0.5rem);
+}
+
+.button:active {
+    background-color: var(--bg-color2);
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+}
+
+
+/* =========================================Home page================================================ */
+/* ==========================================header================================================== */
+header {
+    z-index: 999;
+    flex-direction: column;
+}
+
+
+nav {
+    background-color: var(--nav-bg);
+    /* width: 100%; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10rem;
+    z-index: 999;
+}
+
+nav .logoBox {
+    align-items: center;
+}
+
+header nav .logoBox img {
+    height: 6rem;
+    background-blend-mode: screen;
+}
+
+header nav .navBox {
+    justify-content: end;
+    flex-grow: 1;
+    gap: 5rem;
+
+
+}
+
+/* ================================================nav links============================================== */
+header nav .navBox a {
+    color: var(--main-color);
+    font-size: 2rem;
+    position: relative;
+    font-weight: 400;
+}
+
+header nav .navBox a::after {
+    content: " ";
+    width: 0%;
+    border-bottom: 0.1rem solid var(--main-color);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+header nav .navBox a:hover::after {
+    width: 100%;
+}
+
+/* ===============================================Show/Hide nave================================== */
+#hideNav {
+    color: white;
+    font-size: 3rem;
+    display: none;
+}
+
+#showNav {
+    color: white;
+    font-size: 3rem;
+    display: none;
+}
+
+/* =================================================here section */
+header .heroSection {
+    height: 100vh;
+    background-image: var(--hero-gradient), url(/image/AI_blog.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header .heroSection .infoText {
+    font-weight: 700;
+}
+
+header .heroSection .buttonBox {
+    gap: 1rem;
+}
+
+header .heroSection .buttonBox .coursesBtn {
+    background-color: wheat;
+}
+
+header .heroSection .buttonBox .coursesBtn:hover {
+    background-color: var(--main-color);
+}
+
+header .heroSection .buttonBox .youtubeBtn:hover {
+    background-color: wheat;
+}
+
+/* ==========================================================courses section======================================= */
+.coursesSection {
+    margin-top: 3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+
+}
+
+.coursesSection .coursesContainer {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+
+/* ======================================================about section========================================= */
+.about {
+    margin-top: 2rem;
+    gap: 5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--box-bg-color);
+}
+
+
+
+.aboutbox {
+    flex: 1 1 50rem;
+    max-width: 60rem;
+    width: 100%;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.aboutbox .button {
+    max-width: 30rem;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+
+}
+
+.aboutImage {
+    text-align: center;
+}
+
+.aboutbox img {
+    flex: 1 1 50rem;
+    width: 100%;
+    max-width: 60rem;
+    height: 40rem;
+    object-fit: center;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    box-shadow: 0 0 0.5rem var(--shadow-color);
+}
+
+/* ==========================================================footer section================================ */
+footer {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+footer .footertLink {
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+footer .footertLink a {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+/* ===========================================courses page===================================== */
+
+
+/* ============================================hero============================================= */
+header .coursesHero {
+    height: 80vh;
+    background-image: var(--hero-gradient), url("image/courses.png");
+}
+
+/* ===========================================couses cards============================= */
+.coursepageSection {
+    flex-direction: column;
+    gap: 5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.coursesContainer {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* ==================================================why chooos us box======================================= */
+.whyUs {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    background-color: var(--why-card-bg);
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.whyUs h2 {
+    margin-top: 3rem;
+}
+
+.whyCardContainer {
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.whyCardContainer .whyCard {
+    text-align: center;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1 1 40rem;
+    width: 100%;
+    background-color: var(--box-bg-color);
+    max-width: 35rem;
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.whyCard:hover {
+    transform: translatey(-0.5rem);
+    -webkit-transform: translatey(-0.5rem);
+    -moz-transform: translatey(-0.5rem);
+    -ms-transform: translatey(-0.5rem);
+    -o-transform: translatey(-0.5rem);
+}
+
+
+/* ========================================================notes page=================================== */
+header .notesHero {
+    height: 80vh;
+    background-image: var(--hero-gradient), url("image/notes.png");
+}
+
+.NotesContainer {
+    margin-top: 10rem;
+    flex-wrap: wrap;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    gap: 3rem;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--box-bg-color);
+}
+
+/* ========================================================================about page==================================== */
+header .aboutHero {
+    height: 80vh;
+    background-image: var(--hero-gradient), url("image/abouthero.png");
+}
+
+
+.aboutpage {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+}
+
+.aboutpage .aboutImage {
+    filter: brightness(70%);
+    -webkit-filter: brightness(70%);
+}
+
+.aboutbox {
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+    gap: 1rem;
+    /* align-items: center; */
+}
+
+.aboutpage .aboutbox .missionCard {
+    background-color: var(--why-card-bg);
+    padding: 2rem 3.5rem;
+    border-left: 0.5rem solid var(--main-color);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.aboutpage .aboutbox .rating {
+    justify-content: space-between;
+}
+
+.aboutpage .aboutbox .rating .ratingBox {
+    text-transform: capitalize;
+    flex-direction: column;
+}
+
+/* =====================================================contact page============================= */
+header .contactHero {
+    height: 80vh;
+    background-image: var(--hero-gradient), url("/image/contack.png");
+}
+
+.contactBox {
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: start;
+    background-color: var(--why-card-bg);
+
+
+
+}
+
+.contactBox .formContainer {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--box-bg-color);
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    width: 100%;
+    flex: 1 1 45rem;
+    max-width: 50rem;
+    box-shadow: 0 0.2rem 0.5rem var(--shadow-color);
+}
+
+.contactBox .formContainer .formBox {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contactBox .formContainer .formBox .inputBox {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contactBox .conactWith {
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1 1 30rem;
+    max-width: 40rem;
+    width: 100%;
+    padding: 2rem 2rem;
+}
+
+.group {
+
+    flex-direction: column;
+}
+
+input,
+select,
+option {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid var(--bg-color2);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    outline: none;
+    color: whitesmoke;
+    flex: 1;
+}
+
+.contactBox label {
+    font-size: 2rem;
+    color: var(--main-color);
+
+}
+
+.contactBox textarea {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    height: 15vh;
+
+}
+
+.contactBox option {
+    background-color: var(--box-bg-color);
+}
+
+.conactWith .followBtn {
+    gap: 1rem;
+}
+
+.contactBox a {
+    color: white;
+    font-size: 1.6rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    text-align: center;
+}
+
+.contactBox a:nth-child(1) {
+    background-color: red;
+}
+
+.contactBox a:nth-child(2) {
+    background-image: radial-gradient(rgba(0, 0, 255, 0.384), rgba(179, 27, 171, 0.767));
+}
+
+.contactBox a:nth-child(3) {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.397));
+}
+
+.contactBox a:nth-child(4) {
+    background-image: radial-gradient(rgba(0, 81, 255, 0.925), rgba(0, 60, 255, 0.507));
+}
+
+.followBtn a:hover {
+    background-color: var(--bg-color2);
+    transform: scale(1.02);
+    box-shadow: 0 0 10px var(--shadow-color);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+
+}
+
+.followBtn a:active {
+    transform: scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+}
+
+
+/* ===========================================comming soon====================================== */
+
+header .comingHero {
+    color: red;
+    height: 80vh;
+    background-image: var(--hero-gradient), url("image/coming.png");
+}
+
+
+
+
+
+/* ========================= 1300px ========================= */
+@media (max-width: 1300px) {
+    .card-box {
+        max-width: 90%;
+
+    }
+
+    .flexContainer {
+        padding: 1rem 3rem;
+    }
+
+    nav {
+        gap: 5rem;
+    }
+
+    header nav .navBox {
+        gap: 3rem;
+    }
+
+    .infoText {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 3.2rem;
+    }
+
+    p,
+    .button {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* ========================= 992px ========================= */
+@media (max-width: 992px) {
+    .card-box {
+        max-width: 70%;
+
+    }
+
+    .whyCardContainer {
+        flex-direction: column;
+    }
+
+    .whyCardContainer .whyCard {
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex: 1 1 10rem;
+        background-color: var(--box-bg-color);
+        max-width: 80%;
+        padding: 3rem 4rem;
+    }
+
+    html {
+        font-size: 9px;
+    }
+
+    .flexContainer {
+        padding: 1rem 2rem;
+    }
+
+    nav {
+        gap: 2rem;
+    }
+
+    header nav .navBox {
+        gap: 2rem;
+    }
+
+    .infoText {
+        font-size: 2.8rem;
+    }
+
+    header .heroSection {
+        padding: 2rem;
+    }
+
+    header .heroSection p {
+        width: 90%;
+    }
+}
+
+
+/* ========================= 768px ========================= */
+@media (max-width: 768px) {
+    .card-box {
+        max-width: 100%;
+        text-align: center;
+
+    }
+
+    .card-box img {
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+    }
+
+    .whyCardContainer {
+        flex-direction: column;
+    }
+
+    .whyUs h2 {
+        margin-top: 2rem;
+    }
+
+
+    .whyCardContainer .whyCard {
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex: 1 1 10rem;
+        background-color: var(--box-bg-color);
+        max-width: 100%;
+        padding: 3rem 4rem;
+    }
+
+    html {
+        font-size: 8px;
+    }
+
+    #showNav {
+        display: block;
+        cursor: pointer;
+    }
+
+    #hideNav {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        cursor: pointer;
+    }
+
+    header nav .navBox {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 28rem;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.89);
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    header nav .navBox.active {
+        right: 0;
+    }
+
+    nav {
+        justify-content: space-between;
+    }
+
+    .infoText {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    header .heroSection .buttonBox {
+        flex-direction: column;
+    }
+
+    header .heroSection p {
+        width: 100%;
+    }
+}
+
+
+/* ========================= 480px ========================= */
+@media (max-width: 480px) {
+
+    html {
+        font-size: 7px;
+    }
+
+    .flexContainer {
+        padding: 1rem 1.5rem;
+    }
+
+    header nav .logoBox img {
+        height: 5rem;
+    }
+
+    .infoText {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    p,
+    .button {
+        font-size: 1.7rem;
+    }
+
+    header .heroSection {
+        padding: 3rem;
+    }
+
+    header .heroSection .buttonBox {
+        width: 80%;
+    }
+
+    header .heroSection .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav .navBox {
+        width: 100%;
+    }
+}
